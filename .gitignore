@@ -132,3 +132,7 @@ CLAUDE.md
 # personal/private files, not meant to be tracked
 static/hidden/
 
+# editor settings
+.vscode/
+
+

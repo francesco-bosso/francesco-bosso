@@ -1,9 +1,3 @@
----
-noteId: "92a9b2e0877e11f18a617fce62d33d53"
-tags: []
-
----
-
 # Personal Website
 
 This is the source for my personal site, **[francesco-bosso.github.io](https://francesco-bosso.github.io/)**, where I share the projects I've worked on: geospatial data analysis, machine learning, and a few things I've built just for fun along the way.

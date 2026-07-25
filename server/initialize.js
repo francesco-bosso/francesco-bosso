@@ -172,6 +172,16 @@ export default async (models) => {
             url: "https://github.com/FBosso/jax_mlp",
             finished: 1
         },
+        {
+            codeWork: 18,
+            name: "AlphaStar with manim",
+            shortName: "AlphaStar",
+            image: "/machine_learning/alphastar_manim.webp",
+            description: "This project is an animated presentation, built in Python with Manim and Manim Slides, that explains AlphaStar DeepMind's StarCraft II agent and how it is trained. It walks through why StarCraft is a hard reinforcement learning problem, the agent's policy, observations, and actions, and its training pipeline combining supervised learning and reinforcement learning, complete with animated diagrams like an Actor-Critic architecture. To change slides ← →, For full screen hit F",
+            category: 2,
+            url: "/machine_learning/artifacts/AlphaStar.html",
+            finished: 1
+        },
         
         
         
@@ -322,6 +332,19 @@ export default async (models) => {
             image: "/technologies/neo4j.png",
             url: "https://neo4j.com/",
         },
+        {
+            codeTech: 22,
+            name: "Manim",
+            image: "/technologies/manim.png",
+            url: "https://www.manim.community/",
+        },
+        {
+            codeTech: 23,
+            name: "LaTex",
+            image: "/technologies/latex.png",
+            url: "https://www.latex-project.org/",
+        },
+        
     ]
     await models.Technology.bulkCreate(listaTechnology)
 
@@ -625,6 +648,15 @@ export default async (models) => {
         {
             codeWork: 17,
             codeTech: 5, 
+        },
+
+        {
+            codeWork: 18,
+            codeTech: 22, 
+        },
+        {
+            codeWork: 18,
+            codeTech: 23, 
         },
 
         

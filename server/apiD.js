@@ -2,7 +2,6 @@
 const express = require('express')
 const app = express()
 const { Sequelize, DataTypes } = require("sequelize")
-const initialize = require('./initialize').default
 app.use(express.json())
 
 // Development
@@ -61,7 +60,7 @@ async function initializeDatabaseConnection() {
 
 
     // careful force true will wipe out db data
-    await database.sync({ force: true })
+    await database.sync({ force: false })
 
     return {
         Work,
@@ -74,7 +73,7 @@ async function initializeDatabaseConnection() {
 
 async function runMainApi() {
     const models = await initializeDatabaseConnection()
-    await initialize(models)
+    
 
     /* ----------------- geospatial APIs ----------------- */
     app.get('/geospatial-works', async (req, res) => {

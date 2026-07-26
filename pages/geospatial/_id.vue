@@ -27,7 +27,7 @@
                 </div>
 
                 <div v-if="work.finished == 0" class="center">
-                    <div class="button-deactivated btn mt-3 typing" id="demo">Still working on it ... sorry you can't
+                    <div class="button-deactivated btn mt-3 typing" id="demo">Still working on it ... sorry, you can't
                     </div>
                 </div>
 

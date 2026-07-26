@@ -34,7 +34,7 @@ export default {
           image: '/homepage/artificialIntelligence.webp',
           col: 5,
           path: 'artificial-intelligence',
-          alt: 'Cover of the artificial intelligenxe section of the website',
+          alt: 'Cover of the artificial intelligence section of the website',
         },
         s3: {
           id: 2,

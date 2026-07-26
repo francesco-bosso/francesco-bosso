@@ -6,7 +6,7 @@ export default async (models) => {
             name: "Accuracy assessment of world population raster data",
             shortName: "Accuracy assessment",
             image: "/geospatial/miniature_work_1.png",
-            description: "A WebGIS presenting an analysis that tests the accuracy of two publicly available world population data maps; the GHSL and the WorldPop layer against high resolution satellite imagery over an arbitrary study area with an additional intercomparison of the two. (NOTE: it may take a while to load)",
+            description: "A WebGIS presenting an analysis that tests the accuracy of two publicly available world population data maps: the GHSL and the WorldPop layer, against high-resolution satellite imagery over an arbitrary study area, with an additional intercomparison of the two. (NOTE: it may take a while to load)",
             category: 1,
             url: "http://mapflap.herokuapp.com/summary",
             finished: 1
@@ -16,7 +16,7 @@ export default async (models) => {
             name: "NDVI computation from satellite imagery",
             shortName: "NDVI computation",
             image: "/geospatial/miniature_work_2.png",
-            description: "A little step into the remote sensing world through the computation of the NDVI (Normalized Difference Vegetation Index) based on Sentinel-2 satellite data. The aim of this index is to assess whether or not the target being observed contains live green vegetation.  (NOTE: it may take a while to load)",
+            description: "A little step into the remote sensing world through the computation of the NDVI (Normalized Difference Vegetation Index) based on Sentinel-2 satellite data. The aim of this index is to assess whether or not the target being observed contains live green vegetation. (NOTE: it may take a while to load)",
             category: 1,
             url: "http://mapflap.herokuapp.com/summary_work_2_geo",
             finished: 1
@@ -36,7 +36,7 @@ export default async (models) => {
             name: "Locus: Website for an art town - Bergamo",
             shortName: "Bergamo's WebApp",
             image: "/just_because/Bergamo.jpg",
-            description: "The aim of this project is to provide an immersive and wonderful experience in visiting one of the most beautiful city of northern Italy: Bergamo. The history of Bergamo is full of art, nature and adventures and the vision of that project is to spread it all over the word making it accesible with an intercative website!",
+            description: "The aim of this project is to provide an immersive and wonderful experience in visiting one of the most beautiful cities of northern Italy: Bergamo. The history of Bergamo is full of art, nature and adventures and the vision of that project is to spread it all over the world, making it accessible with an interactive website!",
             category: 3,
             url: "https://locusbergamo.github.io/",
             finished: 1
@@ -46,7 +46,7 @@ export default async (models) => {
             name: "CNN for postprocessing of IVT images",
             shortName: "CNN-IVT",
             image: "/machine_learning/cnn_ivt.png",
-            description: "Re-implementation of the notebook referred to the 2019 paper by Chapman et al. The purpose is to build a ConvNet able to postprocess the IVT (Integrated Vapor Transport) images derived from NWP models given a set of ground truth IVT values derived from measurement.",
+            description: "Re-implementation of the notebook referred to in the 2019 paper by Chapman et al. The purpose is to build a ConvNet able to postprocess the IVT (Integrated Vapor Transport) images derived from NWP models given a set of ground truth IVT values derived from measurement.",
             category: 2,
             url: "https://github.com/FBosso/CNN_IVT",
             finished: 1
@@ -77,7 +77,7 @@ export default async (models) => {
             name: "ML-based improvement of sub-seasonal drought forecasting",
             shortName: "ELM-NN-CNN",
             image: "/hidden/EGU23.jpg",
-            description: "This is the official abstract of the research work that I will present at EGU General Assembly	 2023. The research examines the forecasting and management of droughts, one of the most severe natural disasters that afflict societies.",
+            description: "This is the official abstract of the research work that I will present at EGU General Assembly 2023. The research examines the forecasting and management of droughts, one of the most severe natural disasters that afflict societies.",
             category: 2,
             url: "https://meetingorganizer.copernicus.org/EGU23/EGU23-6685.html",
             finished: 1
@@ -87,7 +87,7 @@ export default async (models) => {
             name: "Niño Index Phase Analysis (NIPA) readaptation",
             shortName: "NewNIPA",
             image: "/geospatial/miniature_work_4.jpg",
-            description: "Readaptation of the Niño Index Phase Analysis (NIPA) module initially developed by Zimmerman et al. (2016) and then readapted by Giuliani et al. (2019). The present version has been modified to work also for subseasonal lead-times. NIPA is a framework that searches for links between Global and Local variables exploiting the phases of climate indices",
+            description: "Readaptation of the Niño Index Phase Analysis (NIPA) module initially developed by Zimmerman et al. (2016) and then readapted by Giuliani et al. (2019). The present version has been modified to work also for sub-seasonal lead-times. NIPA is a framework that searches for links between Global and Local variables exploiting the phases of climate indices.",
             category: 1,
             url: "https://github.com/FBosso/newNIPA",
             finished: 1
@@ -107,7 +107,7 @@ export default async (models) => {
             name: "LLMs for location detection of terrorist events",
             shortName: "LLMs4Security",
             image: "/machine_learning/LLMs-location.png",
-            description: "This technical report discusses the potential use of Large Language Models for location detection with a focus on the JRC Terrorism and Extremism Database. The report highlights the current inaccuracies in the database's location detection algorithm, which uses adhoc created embeddings, struggles with contextual issues, and has difficulty with translated location names.",
+            description: "This technical report discusses the potential use of Large Language Models for location detection with a focus on the JRC Terrorism and Extremism Database. The report highlights the current inaccuracies in the database's location detection algorithm, which uses ad hoc created embeddings, struggles with contextual issues, and has difficulty with translated location names.",
             category: 2,
             url: "https://publications.jrc.ec.europa.eu/repository/handle/JRC134961",
             finished: 1
@@ -127,7 +127,7 @@ export default async (models) => {
             name: "Geodetic coordinates transformation",
             shortName: "ReferenceFrame",
             image: "/geospatial/reference_frame.jpg",
-            description: "This repository contains Python code to solve the problem of transforming geocentric ITRS Cartesian coordinates of COMO PS to geodetic coordinates in the ETRF reference frame. The transformation involves multiple steps, including ITRF baselines, local network surveys, and conversions to the Local Level reference system. The final output provides geodetic coordinates for points BRUN, 0001, 0002, and 0003 at February 2nd, 2019, along with standard deviations.",
+            description: "This repository contains Python code to solve the problem of transforming geocentric ITRS Cartesian coordinates of COMO PS to geodetic coordinates in the ETRF reference frame. The transformation involves multiple steps, including ITRF baselines, local network surveys, and conversions to the Local Level reference system. The final output provides geodetic coordinates for points BRUN, 0001, 0002, and 0003 on February 2nd, 2019, along with standard deviations.",
             category: 1,
             url: "https://github.com/FBosso/reference_frame_transformation",
             finished: 1
@@ -137,7 +137,7 @@ export default async (models) => {
             name: "JRC Terrorism Database - Data Optimisation for ML",
             shortName: "TerrorismDatabase",
             image: "/machine_learning/JRC_terrorism_database.png",
-            description: "The JRC Terrorism and Extremism Database is a tool created by the Joint Research Centre to gather data on terrorism and extremism-related events in the European Union, as well as on the global level. By automatically categorising and grouping events using machine-learning approaches, the database provides insights for short term event monitoring, developing trends and can support related threat assessments.",
+            description: "The JRC Terrorism and Extremism Database is a tool created by the Joint Research Centre to gather data on terrorism and extremism-related events in the European Union, as well as on the global level. By automatically categorising and grouping events using machine-learning approaches, the database provides insights for short-term event monitoring and developing trends, and supports related threat assessments.",
             category: 2,
             url: "https://publications.jrc.ec.europa.eu/repository/handle/JRC135160",
             finished: 1
@@ -177,7 +177,7 @@ export default async (models) => {
             name: "AlphaStar with manim",
             shortName: "AlphaStar",
             image: "/machine_learning/alphastar_manim.webp",
-            description: "This project is an animated presentation, built in Python with Manim and Manim Slides, that explains AlphaStar DeepMind's StarCraft II agent and how it is trained. It walks through why StarCraft is a hard reinforcement learning problem, the agent's policy, observations, and actions, and its training pipeline combining supervised learning and reinforcement learning, complete with animated diagrams like an Actor-Critic architecture. To change slides ← →, For full screen hit F",
+            description: "This project is an animated presentation, built in Python with Manim and Manim Slides, that explains AlphaStar, DeepMind's StarCraft II agent, and how it is trained. It walks through why StarCraft is a hard reinforcement learning problem, the agent's policy, observations, and actions, and its training pipeline combining supervised learning and reinforcement learning, complete with animated diagrams like an Actor-Critic architecture. To change slides, use ← →. For full screen, press F.",
             category: 2,
             url: "/machine_learning/artifacts/AlphaStar.html",
             finished: 1

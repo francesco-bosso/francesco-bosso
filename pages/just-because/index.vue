@@ -58,7 +58,7 @@ export default {
       header: {
         name: 'Just Because',
         description:
-          'Welcome to the Just Because section! Here, you\'ll find a collection of projects that were undertaken simply for the joy of learning, exploring, and having fun. These projects may not have a specific goal or objective, but they offer the opportunity to delve into a variety of interesting topics and concepts. I hope you\'ll find something engaging and enjoyable in this section',
+          'Welcome to the Just Because section! Here, you\'ll find a collection of projects that were undertaken simply for the joy of learning, exploring, and having fun. These projects may not have a specific goal or objective, but they offer the opportunity to delve into a variety of interesting topics and concepts. I hope you\'ll find something engaging and enjoyable in this section.',
       },
       pathToJustBecause: 'just-because',
       animation: {

@@ -9,7 +9,7 @@ a page that does not exist.
   <div class="container">
     <div class="row">
       <div class="col-md pack">
-        <p class="header">Ops! This page does not exist</p>
+        <p class="header">Oops! This page does not exist</p>
       </div>
       <div class="col-md pack">
         <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>

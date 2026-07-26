@@ -63,7 +63,7 @@ export default {
         {
           hid: 'descriptionPortfolio',
           name: 'description',
-          content: 'in the current page it is possible find my CV, some letters of recommendation and third parties opinions about my previous experiences.',
+          content: 'in the current page it is possible to find my CV, some letters of recommendation and third-party opinions about my previous experiences.',
         },
         {
           hid: 'keywordsPortfolio',

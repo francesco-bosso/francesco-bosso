@@ -58,7 +58,7 @@ export default {
       header: {
         name: 'Geospatial',
         description:
-          'Welcome to the Geospatial section! Here, you\'ll discover a range of projects that showcase the potential of geospatial data and its applications. These projects will take you on a journey through the exciting world of geospatial data analysis, from basic data treatment to remote sensing techniques. I hope you\'ll find something new and engaging here',
+          'Welcome to the Geospatial section! Here, you\'ll discover a range of projects that showcase the potential of geospatial data and its applications. These projects will take you on a journey through the exciting world of geospatial data analysis, from basic data treatment to remote sensing techniques. I hope you\'ll find something new and engaging here.',
       },
       pathToGeospatial: 'geospatial',
       animation: {

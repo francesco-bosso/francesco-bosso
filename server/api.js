@@ -6,7 +6,7 @@ const initialize = require('./initialize').default
 app.use(express.json())
 
 // Development
-const database = new Sequelize("postgres://postgres:postgres@localhost:5432/mapflap", {
+const database = new Sequelize(process.env.DATABASE_URL || "postgres://postgres:postgres@localhost:5432/mapflap", {
     logging: false //Set to true to log DB actions
 })
 

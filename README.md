@@ -31,6 +31,22 @@ npm run generate
 
 Running locally requires a Postgres database reachable at `postgres://postgres:postgres@localhost:5432/mapflap`.
 
+## Container development
+
+```bash
+#run containers for back and frontend
+docker compose up
+```
+If we want to generate an updated static website:
+```bash
+#run separate shell inside the container running the app
+docker compose exec app sh
+
+#build and generate the static site
+npm run build
+npm run generate
+```
+
 ## Structure
 
 - `pages/` — the site's routes: home, about me, and one section per project category (geospatial, artificial-intelligence, just-because).

@@ -13,6 +13,8 @@
 </template>
 
 <script>
+import { buildSeoMeta } from '~/utils/seo'
+
 export default {
     name: "PortoflioPage",
     data() {
@@ -57,14 +59,20 @@ export default {
         }
     },
     head() {
+    const title = 'Francesco Bosso | Portfolio'
+    const description =
+      'CV, letters of recommendation, and professional references for Francesco Bosso, AI Research Engineer specializing in machine learning and geospatial AI.'
+    const seo = buildSeoMeta({ path: this.$route.path, title, description })
     return {
-      title: 'Francesco Bosso | Portfolio',
+      title,
+      link: seo.link,
       meta: [
         {
           hid: 'descriptionPortfolio',
           name: 'description',
-          content: 'in the current page it is possible to find my CV, some letters of recommendation and third-party opinions about my previous experiences.',
+          content: description,
         },
+        ...seo.meta,
         {
           hid: 'keywordsPortfolio',
           name: 'keywords',

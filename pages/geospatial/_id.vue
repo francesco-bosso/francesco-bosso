@@ -39,6 +39,12 @@
 <script>
 import BreadCrump from '~/components/BreadCrump.vue'
 import TechnologyComponent from '~/components/TechnologyComponent.vue'
+import {
+  buildSeoMeta,
+  buildBreadcrumbList,
+  absoluteUrl,
+  truncate,
+} from '~/utils/seo'
 export default {
     name: 'SingleGeospatialWork',
     components: {
@@ -81,19 +87,32 @@ export default {
         }
     },
     head() {
+        const title = ` ${this.work.short} | Geospatial`
+        const description = truncate(this.work.description) || `${this.work.short}: a Geospatial project by Francesco Bosso.`
+        const image = absoluteUrl(this.work.image)
+        const seo = buildSeoMeta({ path: this.$route.path, title, description, image, type: 'article' })
         return {
-            title: ` ${this.work.short} | Geospatial`,
+            title,
+            link: seo.link,
             meta: [
                 {
                     hid: 'descriptionSingleG',
                     name: 'description',
-                    content: 'specific Geospatial work and its related info: Name, description, image, technologies and related link',
+                    content: description,
                 },
+                ...seo.meta,
                 {
                     hid: 'keywordsSingleG',
                     name: 'keywords',
                     content: ["Geospatial", "Data analysis", "Mapflap", this.work.short, this.work.technologies],
                 },
+            ],
+            script: [
+                buildBreadcrumbList([
+                    { name: 'Home', path: '/' },
+                    { name: 'Geospatial', path: '/geospatial' },
+                    { name: this.work.short, path: this.$route.path },
+                ]),
             ],
         }
     },

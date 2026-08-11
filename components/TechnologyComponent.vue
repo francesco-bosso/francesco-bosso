@@ -1,7 +1,7 @@
 <template>
     <div class="row">
      <div class="col">
-            <img height="80px" :src="image" :alt="`image - ${name}`" :title="name">
+            <img class="tech-image" width="80" height="80" :src="image" :alt="`image - ${name}`" :title="name">
       </div>
     </div>
 </template>
@@ -23,4 +23,7 @@ export default {
 </script>
 
 <style scoped>
+.tech-image {
+    object-fit: contain;
+}
 </style>

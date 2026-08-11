@@ -62,7 +62,10 @@ export default {
   border-radius: 10px;
 }
 .card-image {
+  width: 100%;
   height: 365.9px;
+  object-fit: cover;
+  object-position: center;
 }
 .marg {
   margin: 10px;

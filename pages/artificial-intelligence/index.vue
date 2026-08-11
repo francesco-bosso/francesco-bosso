@@ -37,6 +37,8 @@ v-for="work in [...works].reverse()" :id="work.codeWork" :key="work.codeWork" :n
 </template>
 
 <script>
+import { buildSeoMeta } from '~/utils/seo'
+
 export default {
   name: 'GeospatialPage',
 
@@ -70,14 +72,20 @@ export default {
     }
   },
   head() {
+    const title = 'Francesco Bosso | Artificial Intelligence'
+    const description =
+      'Machine learning and reinforcement learning projects by Francesco Bosso, AI Research Engineer, spanning cognitive radar, energy optimization, and autonomous systems.'
+    const seo = buildSeoMeta({ path: this.$route.path, title, description })
     return {
-      title: 'Francesco Bosso | Artificial Intelligence',
+      title,
+      link: seo.link,
       meta: [
         {
           hid: 'descriptionAI',
           name: 'description',
-          content: 'in the current page all the available works for the Artificial Intelligence section are shown. A brief introductory description of the page is also provided',
+          content: description,
         },
+        ...seo.meta,
         {
           hid: 'keywordsAI',
           name: 'keywords',

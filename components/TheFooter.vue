@@ -12,7 +12,7 @@ questa component implementa il footer che viene inserito all'interno del default
         <div class="row">
           <!-- Column 1 - It contains the logo of our website and some generic info -->
           <div class="col-xl space">
-            <NuxtLink to="/">
+            <NuxtLink to="/" aria-label="Francesco Bosso - Home">
               <div class="logo">
                 <!--
                 <img
@@ -64,20 +64,17 @@ questa component implementa il footer che viene inserito all'interno del default
             <div class="row">
               <div class="social col">
                 <nuxt-link to="/portfolio">
-                  <img class="icons" src="/footer/references.webp" alt="CV_icon" /></nuxt-link>
+                  <img class="icons" src="/footer/references.webp" alt="CV_icon" width="512" height="497" /></nuxt-link>
               </div>
               <div class="social col">
                 <a href="https://www.linkedin.com/in/francesco-bosso-614814130/"><img class="icons"
-                    src="/footer/linkedin.webp" alt="linkedin_icon" /></a>
+                    src="/footer/linkedin.webp" alt="linkedin_icon" width="512" height="512" /></a>
               </div>
               <div class="social col">
                 <a href="https://github.com/FBosso"><img class="icons" src="/footer/github.webp"
-                    alt="github_icon" /></a>
+                    alt="github_icon" width="512" height="512" /></a>
               </div>
-              <div id="hidden-visitor-map" style="display:none; visibility:hidden; width:0; height:0; overflow:hidden;">
-                <script type="text/javascript" id="mapmyvisitors"
-                  src="//mapmyvisitors.com/map.js?d=a_pBFm5ryIE_oEF30RpDE0V7_5FjjszEy2fUpnff9Kw&cl=ffffff&w=a"></script>
-              </div>
+              <div id="hidden-visitor-map" style="display:none; visibility:hidden; width:0; height:0; overflow:hidden;"></div>
             </div>
           </div>
         </div>
@@ -89,6 +86,27 @@ questa component implementa il footer che viene inserito all'interno del default
 <script>
 export default {
   name: 'TheFooter',
+  mounted() {
+    // Loaded a few seconds after the page has finished loading rather than
+    // inline, so this hidden visitor-counter widget never competes with
+    // real page content for the critical rendering path.
+    const loadVisitorTracker = () => {
+      const script = document.createElement('script')
+      script.id = 'mapmyvisitors'
+      script.src =
+        '//mapmyvisitors.com/map.js?d=a_pBFm5ryIE_oEF30RpDE0V7_5FjjszEy2fUpnff9Kw&cl=ffffff&w=a'
+      document.getElementById('hidden-visitor-map').appendChild(script)
+    }
+    if (document.readyState === 'complete') {
+      window.setTimeout(loadVisitorTracker, 3000)
+    } else {
+      window.addEventListener(
+        'load',
+        () => window.setTimeout(loadVisitorTracker, 3000),
+        { once: true }
+      )
+    }
+  },
 }
 </script>
 
@@ -148,6 +166,7 @@ export default {
 
 
 .icons {
+  width: auto;
   height: 50px;
   transition: 0.4s ease;
   /* filter: invert(); */

@@ -11,6 +11,9 @@
           class="rotate rounded-circle responsive-img"
           src="/homepage/me.webp"
           alt="Francesco image"
+          width="500"
+          height="500"
+          fetchpriority="high"
         />
       </div>
       <button
@@ -81,6 +84,8 @@
 </template>
 
 <script>
+import { buildSeoMeta } from '~/utils/seo'
+
 export default {
   name: 'IndexPage',
   data() {
@@ -131,14 +136,26 @@ export default {
     }
   },
   head() {
+    const title = 'Francesco Bosso | Machine Learning'
+    const description =
+      'Francesco Bosso is an AI Research Engineer working on machine learning, geospatial AI, and reinforcement learning for aerospace, defence, and sensing applications.'
+    const seo = buildSeoMeta({ path: this.$route.path, title, description })
     return {
-      title: `Francesco Bosso | Machine Learning`,
+      title,
+      link: [
+        ...seo.link,
+        // Preloads the hero photo, which is this page's Largest Contentful
+        // Paint element, so the browser fetches it immediately instead of
+        // discovering it only after parsing down to this <img>.
+        { rel: 'preload', as: 'image', href: '/homepage/me.webp' },
+      ],
       meta: [
         {
           hid: 'descriptionHomepage',
           name: 'description',
-          content: `Homepage showing all sections of the site`,
+          content: description,
         },
+        ...seo.meta,
         {
           hid: 'keywordsHomepage',
           name: 'keywords',

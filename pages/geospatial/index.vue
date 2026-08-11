@@ -35,6 +35,8 @@
 </template>
 
 <script>
+import { buildSeoMeta } from '~/utils/seo'
+
 export default {
   name: 'GeospatialPage',
 
@@ -68,14 +70,20 @@ export default {
     }
   },
   head() {
+    const title = 'Francesco Bosso | Geospatial'
+    const description =
+      'Geospatial data analysis and remote sensing projects by Francesco Bosso, from raw imagery processing to applied geospatial AI.'
+    const seo = buildSeoMeta({ path: this.$route.path, title, description })
     return {
-      title: 'Francesco Bosso | Geospatial',
+      title,
+      link: seo.link,
       meta: [
         {
           hid: 'descriptionGeospatial',
           name: 'description',
-          content: 'in the current page all the available works for the geospatial section are shown. A brief introductory description of the page is also provided',
+          content: description,
         },
+        ...seo.meta,
         {
           hid: 'keywordsGeospatial',
           name: 'keywords',

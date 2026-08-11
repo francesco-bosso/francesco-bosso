@@ -1,18 +1,17 @@
-/* ############################## START COMPONENT DESCRIPTION ############################## */
-
-/* this component is used to create the navbar of the website. Even if this component is only 
-used in the default.vue layout we decided to implement it separately in order to maintain a 
-certain order and do not act directly on the layout for future modifications*/
-    
-/* ############################## END COMPONENT DESCRIPTION ############################### */
+/* ############################## START COMPONENT DESCRIPTION
+############################## */ /* this component is used to create the navbar
+of the website. Even if this component is only used in the default.vue layout we
+decided to implement it separately in order to maintain a certain order and do
+not act directly on the layout for future modifications*/ /*
+############################## END COMPONENT DESCRIPTION
+############################### */
 <template>
-
   <nav class="navbar navbar-expand-xl navbar-light px-3 header">
     <!-- <div class="container"> -->
     <a class="navbar-brand" href="/"
       ><img
         class="logo"
-        src="/ico_pizza.ico"
+        src="/header/logo.webp"
         alt="logo"
         width="70"
         height="70"
@@ -71,12 +70,48 @@ export default {
         //   name: 'Portfolio',
         //   path: '/portfolio',
         // },
-         {
-           name: 'About Me',
-           path: '/about-me',
-         },
+        {
+          name: 'About Me',
+          path: '/about-me',
+        },
       ],
     }
+  },
+  mounted() {
+    // Hand-rolled replacement for Bootstrap's Collapse JS: the only Bootstrap
+    // JS feature this site uses is the navbar toggler, so loading the full
+    // bootstrap.bundle.min.js (Popper.js + every component, ~78KB) for it is
+    // pure waste. This drives the same .collapse/.collapsing/.show classes
+    // Bootstrap's CSS already animates, so the CSS bundle didn't need to change.
+    const toggler = this.$el.querySelector('.navbar-toggler')
+    const target = document.getElementById('navbarToggler')
+    toggler.addEventListener('click', () => {
+      const isShown = target.classList.contains('show')
+      target.classList.remove('collapse')
+      target.classList.add('collapsing')
+      if (isShown) {
+        target.style.height = `${target.scrollHeight}px`
+        // eslint-disable-next-line no-unused-expressions
+        target.offsetHeight // force reflow so the transition below runs
+        target.style.height = '0px'
+      } else {
+        target.style.height = '0px'
+        // eslint-disable-next-line no-unused-expressions
+        target.offsetHeight
+        target.style.height = `${target.scrollHeight}px`
+      }
+      target.addEventListener(
+        'transitionend',
+        () => {
+          target.classList.remove('collapsing')
+          target.classList.toggle('show', !isShown)
+          target.classList.add('collapse')
+          target.style.height = ''
+        },
+        { once: true }
+      )
+      toggler.setAttribute('aria-expanded', String(!isShown))
+    })
   },
 }
 </script>
@@ -102,7 +137,7 @@ a {
 }
 
 .cont::before {
-  content: "";
+  content: '';
   position: absolute;
   inset: 0;
   border-radius: 10px;
@@ -115,9 +150,7 @@ a {
   opacity: 0;
   transform: scale(0.95);
   filter: blur(12px);
-  transition:
-    opacity 0.5s ease-in-out,
-    transform 0.5s ease-in-out,
+  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out,
     filter 0.5s ease-in-out;
   z-index: -1;
 }

@@ -38,6 +38,12 @@
 <script>
 import BreadCrump from '~/components/BreadCrump.vue'
 import TechnologyComponent from '~/components/TechnologyComponent.vue'
+import {
+  buildSeoMeta,
+  buildBreadcrumbList,
+  absoluteUrl,
+  truncate,
+} from '~/utils/seo'
 export default {
     name: 'SingleGeospatialWork',
     components: {
@@ -80,19 +86,32 @@ export default {
         }
     },
     head() {
+        const title = ` ${this.work.short} | Artificial Intelligence`
+        const description = truncate(this.work.description) || `${this.work.short}: an Artificial Intelligence project by Francesco Bosso.`
+        const image = absoluteUrl(this.work.image)
+        const seo = buildSeoMeta({ path: this.$route.path, title, description, image, type: 'article' })
         return {
-            title: ` ${this.work.short} | Artificial Intelligence`,
+            title,
+            link: seo.link,
             meta: [
                 {
                     hid: 'descriptionSingleAI',
                     name: 'description',
-                    content: 'specific AI work and its related info: Name, description, image, technologies and related link',
+                    content: description,
                 },
+                ...seo.meta,
                 {
                     hid: 'keywordsSingleAI',
                     name: 'keywords',
                     content: ["Artificial Intelligence", "Data analysis", "Mapflap", this.work.short, this.work.technologies],
                 },
+            ],
+            script: [
+                buildBreadcrumbList([
+                    { name: 'Home', path: '/' },
+                    { name: 'Artificial Intelligence', path: '/artificial-intelligence' },
+                    { name: this.work.short, path: this.$route.path },
+                ]),
             ],
         }
     },

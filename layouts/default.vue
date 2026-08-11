@@ -5,12 +5,12 @@
 /* ############################## START LAYOUT DESCRIPTION ############################## */
 <template>
   <div class="main-page">
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <!-- To include the navbar contained in TheHeader component inside all the pages -->
     <TheHeader />
     <!-- To include the content of the page between the Header and the Footer -->
-    <Nuxt />
+    <main>
+      <Nuxt />
+    </main>
     <!-- To include the Footer component in all the pages -->
     <TheFooter />
   </div>

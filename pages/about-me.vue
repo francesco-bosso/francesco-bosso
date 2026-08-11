@@ -58,6 +58,8 @@
 </template>
 
 <script>
+import { buildSeoMeta } from '~/utils/seo'
+
 export default {
   name: "AboutMePage",
   data() {
@@ -87,14 +89,20 @@ export default {
     }
   },
   head() {
+    const title = 'About Me | Francesco Bosso'
+    const description =
+      'Francesco Bosso is an AI Research Engineer working on machine learning, geospatial AI, and reinforcement learning for aerospace, defence, and space applications, including contributions to the Global Combat Air Programme (GCAP) and the European Commission Joint Research Centre.'
+    const seo = buildSeoMeta({ path: this.$route.path, title, description })
     return {
-      title: `About Me`,
+      title,
+      link: seo.link,
       meta: [
         {
           hid: 'descriptionAboutMe',
           name: 'description',
-          content: `The main idea behind this project`,
+          content: description,
         },
+        ...seo.meta,
         {
           hid: 'keywordsAboutMe',
           name: 'keywords',

@@ -74,7 +74,7 @@ export default async (models) => {
         },
         {
             codeWork: 8,
-            name: "ML-based improvement of sub-seasonal drought forecasting",
+            name: "ML-based sub-seasonal drought forecasting",
             shortName: "ELM-NN-CNN",
             image: "/hidden/EGU23.jpg",
             description: "This is the official abstract of the research work that I will present at EGU General Assembly 2023. The research examines the forecasting and management of droughts, one of the most severe natural disasters that afflict societies.",

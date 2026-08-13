@@ -24,15 +24,23 @@ body {
 .snippet {
   color: rgba(0, 0, 0, 0.7);
   font-size: 1.25rem;
-  text-align: left; /* centers the text */
+  text-align: justify; /* clean, flush edges on both sides for desktop's wider column */
+  text-align-last: left; /* keeps the final (often short) line from being stretched into big gaps */
+  hyphens: auto; /* lets long words break instead of forcing wide gaps to fill the line */
+  -webkit-hyphens: auto;
   margin: 0;     /* ensures proper spacing if needed */
-  
+
 }
 
 
 @media screen and (max-width: 768px) {
   .snippet {
+    /* narrow mobile columns justify poorly (too few words per line), so keep the
+    original centered layout there instead */
     text-align: center;
+    text-align-last: center;
+    hyphens: none;
+    -webkit-hyphens: none;
   }
 }
 

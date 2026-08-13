@@ -6,7 +6,7 @@ export default async (models) => {
             name: "Accuracy assessment of world population raster data",
             shortName: "Accuracy assessment",
             image: "/geospatial/miniature_work_1.png",
-            description: "A WebGIS presenting an analysis that tests the accuracy of two publicly available world population data maps: the GHSL and the WorldPop layer, against high-resolution satellite imagery over an arbitrary study area, with an additional intercomparison of the two. (NOTE: it may take a while to load)",
+            description: "A WebGIS presenting an analysis that tests the accuracy of two world population data maps: the GHSL and the WorldPop layer, against high-resolution satellite imagery, with an additional intercomparison of the two. (slow to load)",
             category: 1,
             url: "http://mapflap.herokuapp.com/summary",
             finished: 1
@@ -43,10 +43,10 @@ export default async (models) => {
         },
         {
             codeWork: 5,
-            name: "CNN for postprocessing of IVT images",
+            name: "CNN for IVT postprocessing",
             shortName: "CNN-IVT",
             image: "/machine_learning/cnn_ivt.png",
-            description: "Re-implementation of the notebook referred to in the 2019 paper by Chapman et al. The purpose is to build a ConvNet able to postprocess the IVT (Integrated Vapor Transport) images derived from NWP models given a set of ground truth IVT values derived from measurement.",
+            description: "Re-implementation of the notebook referred to in the 2019 paper by Chapman et al. The purpose is to build a Convolutional Neural Network able to postprocess IVT (Integrated Vapor Transport) images derived from NWP model forecasts, correcting them against a set of ground-truth IVT values derived from direct measurements, in order to reduce forecast bias.",
             category: 2,
             url: "https://github.com/FBosso/CNN_IVT",
             finished: 1
@@ -57,7 +57,7 @@ export default async (models) => {
             name: "Drought forecasting: ML & climate indices",
             shortName: "ML4Drought",
             image: "/hidden/NIPA.webp",
-            description: "Slides of my presentation of 03-11-2022 at IHE Delft. Droughts are natural extreme events related to the reduction of water resources availability. Challenges in predicting droughts still remain, especially for sub-seasonal lead-times. In this work, we aim to combine a statistical framework and a Machine Learning (ML) model to detect the links between large-scale climate variables and local precipitation, and exploit them to predict monthly cumulative precipitation with a Neural Network.",
+            description: "Slides of my presentation of 03-11-2022 at IHE Delft. Droughts remain challenging to predict, especially for sub-seasonal lead-times. This work combines a statistical framework and a Machine Learning model to link large-scale climate variables with local precipitation, predicting monthly cumulative precipitation with a Neural Network.",
             category: 2,
             url: "/hidden/Bosso_Francesco_presentation.pdf",
             finished: 1
@@ -67,7 +67,7 @@ export default async (models) => {
             name: "Drought forecasting: ML & climate indices",
             shortName: "ML4Drought",
             image: "/hidden/pearson_image_borders.webp",
-            description: "Slides of my presentation of 08-12-2022 at IHE Delft. Droughts are natural extreme events related to the reduction of water resources availability. Challenges in predicting droughts still remain, especially for sub-seasonal lead-times. In this work, we aim to combine a statistical framework and a Machine Learning (ML) model to detect the links between large-scale climate variables and local precipitation, and exploit them to predict monthly cumulative precipitation with a Neural Network.",
+            description: "Slides of my presentation of 08-12-2022 at IHE Delft. Droughts remain challenging to predict, especially for sub-seasonal lead-times. This work combines a statistical framework and a Machine Learning model to link large-scale climate variables with local precipitation, predicting monthly cumulative precipitation with a Neural Network.",
             category: 2,
             url: "/hidden/Bosso_Francesco_presentation_08-12-2022.pdf",
             finished: 1
@@ -87,7 +87,7 @@ export default async (models) => {
             name: "Niño Index Phase Analysis (NIPA) readaptation",
             shortName: "NewNIPA",
             image: "/geospatial/miniature_work_4.jpg",
-            description: "Readaptation of the Niño Index Phase Analysis (NIPA) module initially developed by Zimmerman et al. (2016) and then readapted by Giuliani et al. (2019). The present version has been modified to work also for sub-seasonal lead-times. NIPA is a framework that searches for links between Global and Local variables exploiting the phases of climate indices.",
+            description: "Readaptation of the Niño Index Phase Analysis (NIPA) by Zimmerman et al. (2016) and Giuliani et al. (2019), modified for sub-seasonal lead-times. NIPA searches for links between Global and Local variables via the phases of climate indices.",
             category: 1,
             url: "https://github.com/FBosso/newNIPA",
             finished: 1
@@ -97,7 +97,7 @@ export default async (models) => {
             name: "Reinforcement Learning: DQN for temperature control",
             shortName: "DQN-Shower",
             image: "/machine_learning/reward.png",
-            description: "The goal is to design an intelligent agent that learns to control the shower temperature, adapting to external factors such as the flush of the toilet or similar phenomena. The starting state is initialized with a random temperature ranging from 38 ± 3 °C to introduce variability in the environment.",
+            description: "An intelligent agent trained with Deep Q-Learning to regulate water temperature, adapting to external disturbances such as sudden flow changes in the supply line. Its initial state is randomized within 38 ± 3 °C to introduce variability.",
             category: 2,
             url: "https://github.com/FBosso/DQN_shower",
             finished: 1
@@ -107,7 +107,7 @@ export default async (models) => {
             name: "LLMs for location detection of terrorist events",
             shortName: "LLMs4Security",
             image: "/machine_learning/LLMs-location.png",
-            description: "This technical report discusses the potential use of Large Language Models for location detection with a focus on the JRC Terrorism and Extremism Database. The report highlights the current inaccuracies in the database's location detection algorithm, which uses ad hoc created embeddings, struggles with contextual issues, and has difficulty with translated location names.",
+            description: "This technical report discusses using Large Language Models for location detection in the JRC Terrorism and Extremism Database. It highlights inaccuracies in the database's location algorithm, especially with context and translated names.",
             category: 2,
             url: "https://publications.jrc.ec.europa.eu/repository/handle/JRC134961",
             finished: 1
@@ -117,7 +117,7 @@ export default async (models) => {
             name: "Satellite Orbit computation",
             shortName: "Orbit",
             image: "/geospatial/orbit_computation.png",
-            description: "This repository contains Python code to analyze the almanac of a satellite from the Block IIR constellation. The analysis includes computing clock offsets, satellite positions in both Orbital Reference System (ORS) and International Terrestrial Reference Frame (ITRF), converting coordinates to geodetic form, plotting clock offsets, satellite positions, groundtrack, and saving the results to a text file.",
+            description: "This repository contains Python code to analyze the almanac of a satellite from the Block IIR constellation. The analysis includes computing clock offsets, satellite positions in both Orbital Reference System (ORS) and International Terrestrial Reference Frame (ITRF), converting coordinates to geodetic form, plotting the results, and saving them to a text file.",
             category: 1,
             url: "https://github.com/FBosso/orbit_computation",
             finished: 1
@@ -127,17 +127,17 @@ export default async (models) => {
             name: "Geodetic coordinates transformation",
             shortName: "ReferenceFrame",
             image: "/geospatial/reference_frame.jpg",
-            description: "This repository contains Python code to solve the problem of transforming geocentric ITRS Cartesian coordinates of COMO PS to geodetic coordinates in the ETRF reference frame. The transformation involves multiple steps, including ITRF baselines, local network surveys, and conversions to the Local Level reference system. The final output provides geodetic coordinates for points BRUN, 0001, 0002, and 0003 on February 2nd, 2019, along with standard deviations.",
+            description: "This repository contains Python code to transform geocentric ITRS Cartesian coordinates of COMO PS to geodetic coordinates in the ETRF reference frame, via ITRF baselines, local surveys, and conversion to the Local Level system. Output includes geodetic coordinates for points BRUN, 0001, 0002, and 0003, with standard deviations.",
             category: 1,
             url: "https://github.com/FBosso/reference_frame_transformation",
             finished: 1
         },
         {
             codeWork: 14,
-            name: "JRC Terrorism Database - Data Optimisation for ML",
+            name: "JRC Terrorism DB: ML Data Quality",
             shortName: "TerrorismDatabase",
             image: "/machine_learning/JRC_terrorism_database.png",
-            description: "The JRC Terrorism and Extremism Database is a tool created by the Joint Research Centre to gather data on terrorism and extremism-related events in the European Union, as well as on the global level. By automatically categorising and grouping events using machine-learning approaches, the database provides insights for short-term event monitoring and developing trends, and supports related threat assessments.",
+            description: "Co-authored technical report presenting research on improving the data quality of the JRC Terrorism and Extremism Database using machine-learning models. It refines earlier work on the database's automatic event categorisation, aiming to support more reliable event monitoring, trend detection, and threat assessments.",
             category: 2,
             url: "https://publications.jrc.ec.europa.eu/repository/handle/JRC135160",
             finished: 1
@@ -147,7 +147,7 @@ export default async (models) => {
             name: "Ontology Learning for Hybrid Threats",
             shortName: "HYBOLT",
             image: "/machine_learning/onto_learning.webp",
-            description: "This report explores using advanced AI for mining Open Source Information in Hybrid Threat analysis. Rising tensions make Hybrid Threats more critical, posing technological challenges. Large Language Models show promise but suffer from hallucinations and biases. We propose using formal knowledge bases to correct these issues, reducing human effort via a methodology leveraging limited LLM abilities, aiming to improve Open Source Intelligence reliability.",
+            description: "This report explores using advanced AI for mining Open Source Information in Hybrid Threat analysis. Large Language Models show promise but suffer from hallucinations and biases. We propose using formal knowledge bases to correct these issues, reducing human effort and improving Open Source Intelligence reliability.",
             category: 2,
             url: "https://publications.jrc.ec.europa.eu/repository/handle/JRC140863",
             finished: 1
@@ -157,7 +157,7 @@ export default async (models) => {
             name: "DL-Based Modulation Classification",
             shortName: "DL-AMC",
             image: "/machine_learning/AMC_project.png",
-            description: "This repository contains a reimplementation and extension of a deep learning framework for automatic modulation classification, inspired by the paper Toward Next-Generation Signal Intelligence. The original architecture combines a CNN for raw IQ samples with an MLP for handcrafted features, which are fused before classification. This project replicates the original setup and replaces the fusion mechanism with self-attention and cross-attention modules.",
+            description: "Reimplementation and extension of a deep learning framework for automatic modulation classification, inspired by the paper Toward Next-Generation Signal Intelligence. The original architecture fuses a CNN for raw IQ samples with an MLP for handcrafted features. This project replaces that fusion mechanism with self-attention and cross-attention modules.",
             category: 2,
             url: "https://github.com/FBosso/AMC",
             finished: 1
@@ -167,7 +167,7 @@ export default async (models) => {
             name: "Multi Layer Perceptron in JAX",
             shortName: "MLP-JAX",
             image: "/machine_learning/MLP_JAX.png",
-            description: "This project provides a minimal implementation of a Multi-Layer Perceptron (MLP) classifier built from scratch in JAX and trained on the Iris dataset. It demonstrates the core components of a supervised learning workflow, including model definition, forward pass, loss computation, gradient-based optimization, and accuracy evaluation, all using JAX’s functional and composable API.",
+            description: "This project provides a minimal implementation of a Multi-Layer Perceptron (MLP) classifier built from scratch in JAX and trained on the Iris dataset. It demonstrates the core components of a supervised learning workflow: model definition, forward pass, loss computation, optimization, and accuracy evaluation, using JAX’s functional API.",
             category: 2,
             url: "https://github.com/FBosso/jax_mlp",
             finished: 1
@@ -177,7 +177,7 @@ export default async (models) => {
             name: "AlphaStar with manim",
             shortName: "AlphaStar",
             image: "/machine_learning/alphastar_manim.webp",
-            description: "This project is an animated presentation, built in Python with Manim and Manim Slides, that explains AlphaStar, DeepMind's StarCraft II agent, and how it is trained. It walks through why StarCraft is a hard reinforcement learning problem, the agent's policy, observations, and actions, and its training pipeline combining supervised learning and reinforcement learning, complete with animated diagrams like an Actor-Critic architecture. To change slides, use ← →. For full screen, press F.",
+            description: "This project is an animated presentation, built with Manim, that explains AlphaStar, DeepMind's StarCraft II agent, and how it is trained: why StarCraft is a hard RL problem, the agent's policy, and its training pipeline of supervised and reinforcement learning. To change slides, use ← →. For full screen, press F.",
             category: 2,
             url: "/machine_learning/artifacts/AlphaStar.html",
             finished: 1

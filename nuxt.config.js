@@ -126,7 +126,13 @@ export default {
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {
     // Workaround to avoid enforcing hard-coded localhost:3000: https://github.com/nuxt-community/axios-module/issues/308
+    // baseURL is for server-side calls (asyncData during SSR/generate), which always run on
+    // the same machine as the API, so localhost is correct there. browserBaseURL is relative
+    // so client-side requests (e.g. SPA navigation) hit whatever origin the browser is
+    // actually on instead of hardcoding localhost — otherwise those calls break when the
+    // dev server is reached from another device (e.g. testing on a phone over LAN).
     baseURL: 'http://localhost:3000',
+    browserBaseURL: '',
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build

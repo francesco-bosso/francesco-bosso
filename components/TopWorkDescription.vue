@@ -1,22 +1,16 @@
-/* ############################## START COMPONENT DESCRIPTION ############################## */
-
-/* this component is used for the creation of the top part of the event page. It aggregates two
-different components (StaticCardComponent and TitleDescription) in a single one in order to
-create a big row containing:
-    - An image (not clickable, not interactive) wich is evocative the specific event
-      [StaticCardComponent] ;
-    - A "Title + Description" section, plus the "go to project" call to action, in order to
-      describe the event and let visitors reach it [TitleDescritpion]
-
-The required parameters are:
-    - The image of the specific event;
-    - The Name and Description of the specific event;
-
-Optional parameters:
-    - url: link to the live project, used by the call to action when finished == 1;
-    - finished: 1/0 flag controlling whether the call to action is active or shown as "in progress";*/
-
-/* ############################## END COMPONENT DESCRIPTION ############################### */
+/* ############################## START COMPONENT DESCRIPTION
+############################## */ /* this component is used for the creation of
+the top part of the event page. It aggregates two different components
+(StaticCardComponent and TitleDescription) in a single one in order to create a
+big row containing: - An image (not clickable, not interactive) wich is
+evocative the specific event [StaticCardComponent] ; - A "Title + Description"
+section, plus the "go to project" call to action, in order to describe the event
+and let visitors reach it [TitleDescritpion] The required parameters are: - The
+image of the specific event; - The Name and Description of the specific event;
+Optional parameters: - url: link to the live project, used by the call to action
+when finished == 1; - finished: 1/0 flag controlling whether the call to action
+is active or shown as "in progress";*/ /* ############################## END
+COMPONENT DESCRIPTION ############################### */
 <template>
   <div class="container mt-5">
     <div class="row">
@@ -33,7 +27,7 @@ Optional parameters:
         <div class="cta-row">
           <a
             v-if="finished == 1"
-            :href="url"
+            :href="resolvedUrl"
             target="_blank"
             rel="noopener noreferrer"
             class="cta-link"
@@ -61,6 +55,8 @@ Optional parameters:
 </template>
 
 <script>
+import { resolveWorkUrl } from '~/utils/mobileFallbackLinks'
+
 export default {
   name: 'TopWorkDescriptionComponent',
   props: {
@@ -69,6 +65,23 @@ export default {
     description: { type: String, required: true },
     url: { type: String, default: '' },
     finished: { type: [Number, Boolean], default: 0 },
+  },
+  data() {
+    return {
+      // touch-only devices can't drive keyboard-controlled artifacts (e.g. Manim
+      // slides), so some urls get swapped for a fallback on those devices
+      isTouchOnly: false,
+    }
+  },
+  computed: {
+    resolvedUrl() {
+      return resolveWorkUrl(this.url, this.isTouchOnly)
+    },
+  },
+  mounted() {
+    this.isTouchOnly = window.matchMedia(
+      '(hover: none) and (pointer: coarse)'
+    ).matches
   },
 }
 </script>

@@ -60,7 +60,7 @@ export default {
       header: {
         name: 'Just Because',
         description:
-          'Welcome to the Just Because section! Here, you\'ll find a collection of projects that were undertaken simply for the joy of learning, exploring, and having fun. These projects may not have a specific goal or objective, but they offer the opportunity to delve into a variety of interesting topics and concepts. I hope you\'ll find something engaging and enjoyable in this section.',
+          'Not every project needs a business case. This is where I build things purely out of curiosity — small tools and experiments that don\'t fit neatly into geospatial or AI, kept here because they were worth building and might be worth exploring.',
       },
       pathToJustBecause: 'just-because',
       animation: {

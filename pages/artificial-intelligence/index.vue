@@ -62,7 +62,7 @@ export default {
       header: {
         name: 'Artificial Intelligence',
         description:
-          'Welcome to the Artificial Intelligence section! You\'ll find experiments showcasing the power and versatility of machine learning algorithms. From simple techniques to more advanced approaches, these experiments offer a glimpse into the exciting world of data analysis and machine learning. Whether you\'re an expert or just starting out, I hope you\'ll find something new and interesting here.',
+          'A collection of things I\'ve made around artificial intelligence: projects, publications, and interactive slides covering different algorithms and ideas in the field. Some are hands-on implementations, others are write-ups meant to explain a concept clearly.',
       },
       pathToMachineLearning: 'artificial-intelligence',
       animation: {

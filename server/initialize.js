@@ -93,6 +93,16 @@ export default async (models) => {
             finished: 1
         },
         {
+            codeWork: 19,
+            name: "Reinforcement Learning: DQN plays Snake",
+            shortName: "Q-Snake",
+            image: "/machine_learning/q_snake.webp",
+            description: "A small neural network that teaches itself to play Snake from scratch with Deep Q-Learning. No rules or hand-written strategy: the agent sees 11 binary features (danger, heading, food direction), picks one of three moves, and learns from rewards and an experience replay buffer until it chases food on purpose.",
+            category: 2,
+            url: "https://github.com/FBosso/Q-snake",
+            finished: 1
+        },
+        {
             codeWork: 10,
             name: "Reinforcement Learning: DQN for temperature control",
             shortName: "DQN-Shower",
@@ -344,7 +354,13 @@ export default async (models) => {
             image: "/technologies/latex.png",
             url: "https://www.latex-project.org/",
         },
-        
+        {
+            codeTech: 24,
+            name: "Pygame",
+            image: "/technologies/pygame.png",
+            url: "https://www.pygame.org/",
+        },
+
     ]
     await models.Technology.bulkCreate(listaTechnology)
 
@@ -656,7 +672,24 @@ export default async (models) => {
         },
         {
             codeWork: 18,
-            codeTech: 23, 
+            codeTech: 23,
+        },
+
+        {
+            codeWork: 19,
+            codeTech: 18,
+        },
+        {
+            codeWork: 19,
+            codeTech: 16,
+        },
+        {
+            codeWork: 19,
+            codeTech: 24,
+        },
+        {
+            codeWork: 19,
+            codeTech: 11,
         },
 
         

@@ -192,6 +192,16 @@ export default async (models) => {
             url: "/machine_learning/artifacts/AlphaStar.html",
             finished: 1
         },
+        {
+            codeWork: 20,
+            name: "Building damage assessment: LA fires 2025",
+            shortName: "LA-Fire-UNet",
+            image: "/machine_learning/la_fire_unet.webp",
+            description: "A UNet with a ResNeXt50 32x4d backbone, fine-tuned on a dataset I created from the January 2025 Los Angeles fires. Built on Microsoft's building-damage-assessment workflow, it labels every pixel of an RGB image as background, healthy or damaged building. Weights are on Hugging Face, with the dataset linked in the same repo.",
+            category: 2,
+            url: "https://huggingface.co/fbos/UNet_resnext50_32x4d-LA_fire_jan_2025_fine-tune",
+            finished: 1
+        },
         
         
         
@@ -690,6 +700,11 @@ export default async (models) => {
         {
             codeWork: 19,
             codeTech: 11,
+        },
+
+        {
+            codeWork: 20,
+            codeTech: 18,
         },
 
         
